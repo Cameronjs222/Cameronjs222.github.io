@@ -4,35 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-    <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="index.php?page=about">About</a></li>
-        <li><a href="index.php?page=contact">Contact</a></li>
-    </ul>
-
-    </nav>
-
-    <main>
-        <?php
-        if(isset($_GET['page'])){
-            $page = $_GET['page'];
-            include($page . ".php");
-        }else{
-            include("home.php");
-        }
-        ?>
-    </main>
-    
-
-
-
-    <footer>
-        <p>Footer</p>
-    </footer>
-
-
+<nav class="bg-danger">
+    <div class="openingVid">
+        <video autoplay loop src="./production_id_4612981 (240p).mp4"></video>
+        <ul class="nav-links d-flex justify-content-evenly">
+            <li class="">
+                <a class="btn btn-outline-dark opacity-75 custom_button" href="#"><span>Projects</span></a>
+            </li>
+            <li class="">
+                <a class="btn btn-outline-dark opacity-75 custom_button" href="#"><span>About</span></a>
+            </li>
+            <li class="">
+                <a class="btn btn-outline-dark opacity-75 custom_button" href="#"><span>Contact</span></a>
+            </li>
+        </ul>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+.nav-links { 
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    list-style: none;;
+}
+
+.custom_button {
+    /* add border where the bottom right side connect diagonally to the top right edge. */
+    transform: skew(-30deg);
+
+}
+
+.custom_button span {
+    display: inline-block;
+    transform: skew(30deg); /* Counteract the parent skew */
+}
+
+.openingVid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Style the video to cover the entire width */
+.openingVid video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place the video behind other content */
+}
