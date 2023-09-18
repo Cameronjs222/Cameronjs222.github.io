@@ -55,3 +55,15 @@
     top: 0;
     left: 0;
 }
+
+.name {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: -20%;
+    margin: auto;
+    z-index: 2;
+    border: 2px solid red;
+
+}
