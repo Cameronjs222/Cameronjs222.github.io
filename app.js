@@ -1,14 +1,13 @@
 const scrollImg = () => {
     const scrollPos = window.scrollY;
-    console.log(scrollPos);
     const img = document.querySelector('.img');
-    if (scrollPos > 250) {
-        img.style.top = `${(scrollPos - 250) * -0.5}px`;
-    }
-    else {
-        img.style.top = '0px';
+    const imgHeight = img.clientHeight;
+    const windowHeight = window.innerHeight;
 
-    }
+    // Calculate the top position of the image based on the scroll position
+    const imgTop = Math.min(0, scrollPos - (imgHeight - windowHeight));
+    
+    img.style.top = imgTop + 'px';
 }
 
     window.addEventListener('scroll', scrollImg);

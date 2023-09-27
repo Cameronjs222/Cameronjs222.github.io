@@ -94,13 +94,13 @@ body {
     max-height: 450px;
 }
 
+/* add shadow effect to projects so that the inside of the shadows are shaded */
 .projects {
     width: 100%;
     height: 70vh;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start; /* Change from "align-items: start;" */
     gap: 20%;
     overflow: hidden;
 }
@@ -112,7 +112,7 @@ body {
 }
 
 .contact {
-    width: 100%;
+    width: 100vw;
     height: 30vh;
     border: 1px solid black;
     display: flex;
