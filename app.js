@@ -3,11 +3,15 @@ const scrollImg = () => {
     const img = document.querySelector('.img');
     const imgHeight = img.clientHeight;
     const windowHeight = window.innerHeight;
-
-    // Calculate the top position of the image based on the scroll position
-    const imgTop = Math.min(0, scrollPos - (imgHeight - windowHeight));
-    
-    img.style.top = imgTop + 'px';
+    img.style.top = `-${imgHeight - scrollPos * 1.35}px`;
+    // take the number from img.style.top and convert it to a number
+    const imgTop = parseInt(img.style.top)
+    const secondImg = document.querySelector('.img2');
+    const secondImgHeight = secondImg.clientHeight;
+    if (imgTop >= -21) {
+        secondImg.style.top = `-${secondImgHeight + 800 - scrollPos * 1.35}px`;
+    }
+    console.log(scrollPos);
 }
 
-    window.addEventListener('scroll', scrollImg);
+window.addEventListener('scroll', scrollImg);
