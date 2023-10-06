@@ -16,4 +16,15 @@ const scrollImg = () => {
     console.log(scrollRatio + '%');
 }
 
+
+const textOpacity = () => {
+    const scrollPos = window.scrollY;
+    const text = document.querySelector('.text');
+    console.log(scrollPos);
+    console.log(text);
+    text.style.opacity = `${scrollPos / 700}`;
+
+}
+
+window.addEventListener('scroll', textOpacity);
 window.addEventListener('scroll', scrollImg);
