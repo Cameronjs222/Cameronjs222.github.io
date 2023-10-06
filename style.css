@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: space-around;
     width: 30%;
-    list-style: none;;
+    list-style: none;
 }
 
 .custom_button {
@@ -74,10 +74,21 @@ body {
     padding-top: 5vh;
 }
 
+.projectInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    position: absolute;
+    color: thistle;
+
+}
+
 .about {
     width: 100%;
     height: 70vh;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +97,6 @@ body {
 
 .bio {
     width: 30%;
-    border: 1px solid black;
 }
 
 .about img {
@@ -96,13 +106,20 @@ body {
 
 /* add shadow effect to projects so that the inside of the shadows are shaded */
 .projects {
-    width: 100%;
+    width: 90%;
     height: 70vh;
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Change from "align-items: start;" */
     gap: 20%;
     overflow: hidden;
+    margin: auto;
+    box-shadow: -10px -5px 10px black;
+}
+
+.shadowBox {
+    width: 100%;
+    height: 100%;
 }
 
 .projects img {
@@ -122,8 +139,6 @@ body {
     gap: 20%;
 }
 
-/*  */
-
-.projects .img :hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+.text {
+    box-shadow: 10px -5px 10px black;
 }
