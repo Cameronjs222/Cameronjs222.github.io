@@ -1,5 +1,5 @@
 body {
-    background-color: aliceblue;
+    background-color: rgba(68,70,84);
 
 }
 
@@ -108,6 +108,18 @@ body {
 .projects {
     width: 90%;
     height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Change from "align-items: start;" */
+    gap: 20%;
+    overflow: hidden;
+    margin: auto;
+    box-shadow: -10px -5px 10px black;
+}
+
+.smallerProject {
+    width: 90%;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Change from "align-items: start;" */

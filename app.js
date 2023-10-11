@@ -12,19 +12,29 @@ const scrollImg = () => {
     if (scrollPos >= endOfPage / 2) {
         secondImg.style.top = `-${secondImgHeight + windowHeight - scrollPos}px`;
     }
-    console.log(scrollPos, windowHeight);
-    console.log(scrollRatio + '%');
 }
 
 
 const textOpacity = () => {
     const scrollPos = window.scrollY;
     const text = document.querySelector('.text');
-    console.log(scrollPos);
-    console.log(text);
     text.style.opacity = `${scrollPos / 700}`;
 
 }
+
+    const emailButton = document.getElementById("emailButton");
+
+        // Add a click event listener to the button
+        emailButton.addEventListener("click", function () {
+            // Define email parameters
+            const to = "Cameronshaffer95@gmail.com";
+            // Create the mailto link
+            const mailtoLink = `mailto:${to}`;
+
+            // Open the user's default email client
+            window.location.href = mailtoLink;
+        });
+
 
 window.addEventListener('scroll', textOpacity);
 window.addEventListener('scroll', scrollImg);
