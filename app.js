@@ -1,10 +1,7 @@
 
 const img = document.querySelector('.img');
-console.log(img.clientHeight);
 const secondImg = document.querySelector('.img2');
-console.log(secondImg.clientHeight);
 const projectWindow = document.querySelector('.projects')
-console.log(projectWindow.clientHeight + " window height");
 img.style.top = `-${projectWindow.clientHeight}px`;
 secondImg.style.top = `-${projectWindow.clientHeight}px`;
 
@@ -19,47 +16,66 @@ const scrollImg = () => {
 
 const window1 = document.getElementById('firstWindow');
 const window2 = document.getElementById('secondWindow');
-console.log(window1.getBoundingClientRect().y + " top");
-console.log(window2.getBoundingClientRect().y + " bottom");
-
-
-
-// const scrollImg = () => {
-//     const scrollPos = window.scrollY;
-//     const img = document.querySelector('.img');
-//     const imgHeight = img.clientHeight;
-//     const projectWindow = window.innerHeight;
-//     const endOfPage = projectWindow * 5/3;
-//     const scrollRatio = endOfPage / projectWindow;
-//     img.style.top = `-${imgHeight - scrollPos}px`;
-//     const secondImg = document.querySelector('.img2');
-//     const secondImgHeight = secondImg.clientHeight;
-//     console.log(endOfPage)
-//     if (scrollPos >= endOfPage / 2) {
-//         secondImg.style.top = `-${secondImgHeight + projectWindow - scrollPos}px`;
-//     }
-// }
 
 const textOpacity = () => {
     const scrollPos = window.scrollY;
-    const text = document.querySelector('.text');
-    text.style.opacity = `${scrollPos / 700}`;
+    const text1 = document.querySelector('.text1');
+    const text2 = document.querySelector('.text2');
+    if (scrollPos > window1.getBoundingClientRect().top - window.innerHeight) {
+      text1.style.color = `rgb(255, 107, 107, ${scrollPos / (window.innerHeight / 2)})`;
+    }
+    console.log(scrollPos - window2.getBoundingClientRect().top);
+    if (scrollPos > window2.getBoundingClientRect().top) {
+      text2.style.color = `rgb(255, 107, 107, ${(scrollPos - window2.getBoundingClientRect().top) / (window.innerHeight / 2)}`;
+    }
+  }
 
+// const textOpacity = () => {
+//     const scrollPos = window.scrollY;
+//     const text1 = document.querySelector('.text1');
+//     const text2 = document.querySelector('.text2');
+//     if (scrollPos > window1.getBoundingClientRect().top - window.innerHeight) {
+//         text1.style.opacity = `${scrollPos / (window.innerHeight/2)}`;
+//     } 
+//     console.log(scrollPos - window2.getBoundingClientRect().top);
+//     if (scrollPos > window2.getBoundingClientRect().top) {
+//         text2.style.opacity = `${(scrollPos - window2.getBoundingClientRect().top) / (window.innerHeight)}`;
+//         text2.style.color = "white";
+//     }
+// }
+
+// const textOpacity = () => {
+//     const scrollPos = window.scrollY;
+    
+//     // Select all elements with class name "text1"
+//     const text1Elements = document.querySelectorAll('.text1');
+    
+//     // Select all elements with class name "text2"
+//     const text2Elements = document.querySelectorAll('.text2');
+    
+//     text1Elements.forEach(text1 => {
+//         if (scrollPos > text1.getBoundingClientRect().top - window.innerHeight) {
+//             text1.style.opacity = `${scrollPos / (window.innerHeight / 2)}`;
+//         }
+//     });
+    
+//     text2Elements.forEach(text2 => {
+//         if (scrollPos > text2.getBoundingClientRect().top) {
+//             text2.style.opacity = `${(scrollPos - text2.getBoundingClientRect().top) / window.innerHeight}`;
+//             text2.style.color = "white";
+//         }
+//     });
+// }
+
+
+const emailButton = document.getElementById("emailButton");
+
+const emailLink = () => {
+    const to = "Cameronshaffer95@gmail.com";
+    const mailtoLink = `mailto:${to}`;
+    window.location.href = mailtoLink;
 }
 
-    const emailButton = document.getElementById("emailButton");
-
-        // Add a click event listener to the button
-        emailButton.addEventListener("click", function () {
-            // Define email parameters
-            const to = "Cameronshaffer95@gmail.com";
-            // Create the mailto link
-            const mailtoLink = `mailto:${to}`;
-
-            // Open the user's default email client
-            window.location.href = mailtoLink;
-        });
-
-
+emailButton.addEventListener("click", emailLink);
 window.addEventListener('scroll', textOpacity);
 window.addEventListener('scroll', scrollImg);
