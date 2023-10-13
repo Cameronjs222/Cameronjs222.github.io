@@ -204,3 +204,53 @@ body {
 #resumeButton {
     width: ;
 }
+
+@media screen and (max-width: 1000px) {
+    .about {
+        flex-direction: column;
+        gap: 0%;
+    }
+    #Selfie {
+        display: none;
+    }
+    .name   {
+        font-size: 5vh;
+    }
+
+  }
+
+  @media screen and (max-width: 750px) {
+    .bio {
+        width: 100%;
+    }
+    .projects img {
+        max-width: 220vw;
+        position: relative;
+    }
+    #secondWindow {
+        justify-content: flex-start;
+    }
+    .openingVid {
+        height: 20vh;
+    }   
+    .name {
+        font-size: 3vh;
+    }
+
+  }
+    
+
+  @media screen and (max-width: 400px){
+    .projects img {
+        max-width: 220vw;
+        position: relative;
+    }
+    .openingVid {
+        height: 10vh;
+    }   
+    .name {
+        font-size: 1vh;
+    }
+
+    
+  }
