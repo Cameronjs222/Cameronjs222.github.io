@@ -22,11 +22,11 @@ const textOpacity = () => {
     const text1 = document.querySelector('.text1');
     const text2 = document.querySelector('.text2');
     if (scrollPos > window1.getBoundingClientRect().top - window.innerHeight) {
-      text1.style.color = `rgb(255, 107, 107, ${scrollPos / (window.innerHeight / 2)})`;
+      text1.style.color = `rgb(255, 255, 255, ${scrollPos / (window.innerHeight / 2)})`;
     }
     console.log(scrollPos - window2.getBoundingClientRect().top);
     if (scrollPos > window2.getBoundingClientRect().top) {
-      text2.style.color = `rgb(255, 107, 107, ${(scrollPos - window2.getBoundingClientRect().top) / (window.innerHeight / 2)}`;
+      text2.style.color = `rgb(255, 255, 255, ${(scrollPos - window2.getBoundingClientRect().top) / (window.innerHeight / 2)}`;
     }
   }
 
