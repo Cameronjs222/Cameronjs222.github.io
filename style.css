@@ -4,6 +4,15 @@ body {
 
 }
 
+a {
+    color: inherit; /* or specify the desired color */
+    text-decoration: none; /* remove underline if needed */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* add underline on hover if needed */
+  }
+
 .nav-links { 
     display: flex;
     justify-content: space-around;
@@ -124,13 +133,29 @@ body {
     width: 100%;
     height: 70vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     margin: auto;
-    gap: 10%;
     border-bottom: 2px solid black;
+}
+
+.project {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 10px 0
+}
+
+.deployedProjects {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    gap: 10%;
+    padding: 0 10%;
 }
 
 .projects div {
@@ -143,15 +168,20 @@ body {
 }
 
 .project-desciption span {
-    width: 50%;
-    height: 100%;
-    text-align: center;
+    width: 80%;
+    height: 50%;
+    text-align: start;
     /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start; */
 }
+.deployedProjects img {
+    max-width: 100vw;
+    position: relative;
+    border-top: 2px solid black 
 
+}
 
 .projects img {
     max-width: 100vw;
@@ -238,6 +268,14 @@ body {
     font-size: 20px;
     font-weight: bold;
     width: 50%;
+}
+
+.projectImg {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
