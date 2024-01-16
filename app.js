@@ -1,10 +1,9 @@
 
 const img = document.querySelector('.img');
-const secondImg = document.querySelector('.img2');
-const projectWindow = document.querySelector('.projects')
+const projectWindow = document.querySelector('.deployedProjects')
 img.style.top = `-${projectWindow.clientHeight}px`;
-secondImg.style.top = `-${projectWindow.clientHeight}px`;
 
+console.log(projectWindow.clientHeight);
 const scrollImg = () => {
     const scrollPos = window.scrollY;
     if (scrollPos >= window2.getBoundingClientRect().top) {
@@ -16,7 +15,6 @@ const scrollImg = () => {
 
 const window1 = document.getElementById('firstWindow');
 const window2 = document.getElementById('secondWindow');
-
 // const textOpacity = () => {
 //     const scrollPos = window.scrollY;
 //     const text1 = document.querySelector('.text1');
