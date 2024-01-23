@@ -6,12 +6,14 @@
 
 .project-description-text {
     color: white;
-    opacity: .75;
-    transition: opacity .5s ease-in-out;
+}
+
+.letter {
+    color: rgb(178,172,184)
 }
 
 .hovered {
-    color: red;
+    color: white;
 }
 
 .test {
@@ -29,4 +31,5 @@ body {
     background: radial-gradient(circle at center, rgb(22.4%,0%,45.1%), rgb(7.5%,0%,14.9%) 70%, rgb(7.5%,0%,14.9%) 100%);
     position: absolute;
     z-index: -1;
+    border: 2px solid rgb(22.4%,0%,45.1%);
 }
