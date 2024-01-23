@@ -1,12 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.project-description-text {
+    color: white;
+    opacity: .75;
+}
+
+.test {
+    color: white;
+}
+
 body {
-    background-color: rgb(14,23,42);
+    background-color: rgb(7.5%,0%,14.9%);
 }
 
 .mouse {
     width: 50rem;
     height: 50rem;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgb(18, 31, 65), rgb(14, 23, 42) 70%, rgba(14, 23, 42, 0) 100%);
+    background: radial-gradient(circle at center, rgb(22.4%,0%,45.1%), rgb(7.5%,0%,14.9%) 70%, rgb(7.5%,0%,14.9%) 100%);
     position: absolute;
     z-index: -1;
 }
