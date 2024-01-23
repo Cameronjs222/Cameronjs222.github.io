@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(14,23,42);
+}
+
+.mouse {
+    width: 50rem;
+    height: 50rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgb(18, 31, 65), rgb(14, 23, 42) 70%, rgba(14, 23, 42, 0) 100%);
+    position: absolute;
+    z-index: -1;
+}

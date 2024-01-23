@@ -149,10 +149,11 @@ a {
 }
 
 .deployedProjects {
-    height: 100%;
-    width: 100%;
+    /* height: 75vh; */
+    width: 100vw;
     display: flex;
     justify-content: space-around;
+    align-items: end;
     overflow: hidden;
     gap: 10%;
     padding: 0 10%;
@@ -271,21 +272,19 @@ a {
 }
 
 .projectImg {
-    width: 50%;
-    height: 100%;
+    width: 40rem;
+    height: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
+
     .about {
-        flex-direction: column;
-        gap: 0%;
-    }
-    #Selfie {
-        display: none;
+        flex-direction: row;
+        gap: 10%;
     }
     .name   {
         font-size: 5vh;

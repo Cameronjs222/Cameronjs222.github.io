@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cameron Shaffer Portfolio.</title>
+    <link rel="stylesheet" href="newStyle.css">
+</head>
+<body>
+    <a href="http://congressonpalestine.com" target="_blank">
+        <div class="deployedProjects test" id="secondWindow">
+                <img src="./img/Screen Shot 2024-01-15 at 1.50.42 PM.png" alt="Congress On Palestine home page" class="img projectImg" id="congressOnPalestine" style="max-width: 35rem;">
+                <div class="project-desciption" id="congressOnPalestineDescription">
+                    <span>
+                        My latest solo project, a fully deployed website designed to track, filter, and publish the public statements of US congress members in relation to the genocide of Palestinan people. It may look simple, but this project required the combination of mulitple api's, a thoughough backend database, and fully dynamic front end. Automatically and efficiently collecting, storing, and displaying hundreds of thousands of twitter post; this project involved a large degree of optimization and efficiency.
+                    </span> 
+                    <h3>
+                        <--- Click the image to check it out!
+                    </h3>
+                </div>
+            </div>
+        </a>
+
+        <div class="projects">
+            <div class="project">
+                <div class="youtube-videos">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fkuU_37IoNs?si=kaW_iyyZTT39R22p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
+                <div class="project-desciption" id="techTalkDescription">
+                    <span>
+                        As the leader of this dynamic group project, I orchestrated the swift development of a fully functional mock social media platform. Our collaborative efforts resulted in the seamless creation of user profiles, enabling individuals to post, comment, and follow others within the simulated environment. This project showcases our proficiency in rapid prototyping and collaborative teamwork, highlighting our ability to deliver a comprehensive and interactive social media experience.
+                    </span>
+                </div>
+            </div>
+            <div class="project">
+    
+                <div class="youtube-videos">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6-nR0xthmhk" frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="project-desciption" id="candelaObscuraDescription">
+                    <span>
+    
+                        Embark on a solo project journey with my fully functional character tracker designed for the tabletop RPG, Candela Obscura. This tool streamlines character management, allowing users to create profiles, track characters and skills, and connect with others in the simulated environment. Demonstrating rapid prototyping and collaborative skills, this project showcases my ability to deliver comprehensive and interactive websites. Join me on this virtual adventure, where creativity and functionality converge to enhance the tabletop gaming experience!                </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mouse">
+
+        </div>
+
+
+        <div class="test testBall" style="height: 50px; width: 50px; margin: 50% auto; background-color: white;">
+
+        </div>
+</body>
+<script>
+    const mouseTracker = () => {
+        const mouse = document.querySelector('.mouse');
+        document.addEventListener('mousemove', (e) => {
+            // get mose position
+            divWidth = mouse.offsetWidth;
+            divHeight = mouse.offsetHeight;
+            let adjustedXValue = e.pageX - (divWidth / 2);
+            let adjustedYValue = e.pageY - (divHeight / 2);
+            mouse.style.left = adjustedXValue + 'px';
+            mouse.style.top = adjustedYValue + 'px';
+        })
+    }
+
+
+    const preHoverEffect = (itemClassName) => {
+    const mouse = document.querySelector('.mouse');
+    const items = document.getElementsByClassName(itemClassName);
+    const mouseWidth = mouse.offsetWidth;
+    const mouseHeight = mouse.offsetHeight;
+
+    const handleMouseMove = (e) => {
+        Array.from(items).forEach((item) => {
+            const itemPositionTop = item.offsetTop;
+            const itemPositionLeft = item.offsetLeft;
+            const itemPositionbottom = item.offsetTop + item.offsetHeight;
+            const itemPositionRight = item.offsetLeft + item.offsetWidth;
+
+            if (e.pageY >= itemPositionTop - mouseHeight / 3 
+            && e.pageY <= itemPositionbottom + mouseHeight / 3
+            && e.pageX >= itemPositionLeft - mouseWidth / 3
+            && e.pageX <= itemPositionRight + mouseWidth / 3) 
+            
+                {
+                    item.style.border = '2px solid red';
+                } else {
+                    item.style.border = ''; 
+                }
+
+        });
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+};
+
+
+    mouseTracker();
+    preHoverEffect('test');
+</script>
+</html>
