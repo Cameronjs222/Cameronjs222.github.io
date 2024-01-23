@@ -65,7 +65,7 @@ const splitText = (myClass) => {
 
     elementsArray.forEach((element, index) => {
         const text = element.textContent;
-        const modifiedText = text.split('').map(letter => `<span class='test'>${letter}</span>`).join('');
+        const modifiedText = text.split('').map(letter => `<span class='letter'>${letter}</span>`).join('');
         element.innerHTML = modifiedText;
     });
 }
@@ -102,11 +102,10 @@ const splitText = (myClass) => {
             && e.pageX <= itemPositionRight + mouseWidth / 2) 
             
                 {
-                    // transition to opacity 1
-                    item.style.opacity = "1";
-                    
-                } else {
-                    item.style.opacity = ".75";
+                    item.classList.add('hovered');
+                    setTimeout(function() {
+        item.classList.remove('hovered');
+    }, 50); 
                 }
 
         };
@@ -115,9 +114,13 @@ const splitText = (myClass) => {
     document.addEventListener('mousemove', handleMouseMove);
 };
 
-
-    mouseTracker();
-    preHoverEffect('test');
+    document.addEventListener('mousemove', mouseTracker())
+    preHoverEffect('letter');
     splitText('project-description-text')
 </script>
 </html>
+
+<!-- TODO: 
+    - fade out highlihgt when mouse stops moving
+    - set highlihgt to change opacity
+    - set to check if mouse is close to box of text before checking if contents are close to mouse -->

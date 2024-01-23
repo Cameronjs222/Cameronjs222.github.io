@@ -7,6 +7,11 @@
 .project-description-text {
     color: white;
     opacity: .75;
+    transition: opacity .5s ease-in-out;
+}
+
+.hovered {
+    color: red;
 }
 
 .test {
