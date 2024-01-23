@@ -50,10 +50,9 @@
 
         </div>
 
-
-        <h1 class="test">
-            test
-        </h1>
+        <div class="project-description-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum odit doloribus, rerum eligendi molestias consequatur ut ipsam labore possimus nam enim accusamus ex incidunt explicabo sit nesciunt. Inventore, recusandae minus.
+        </div>
 
 
 </body>
@@ -88,31 +87,37 @@ const splitText = (myClass) => {
     const items = document.getElementsByClassName(itemClassName);
     const mouseWidth = mouse.offsetWidth;
     const mouseHeight = mouse.offsetHeight;
+    const mouseRadius = Math.sqrt((mouseWidth / 2) ** 2 + (mouseHeight / 2) ** 2) * .75;
 
     const handleMouseMove = (e) => {
+        const mouseX = e.pageX;
+        const mouseY = e.pageY;
+
         for (let item of items) {
-            const itemPositionTop = item.offsetTop;
-            const itemPositionLeft = item.offsetLeft;
-            const itemPositionbottom = item.offsetTop + item.offsetHeight;
-            const itemPositionRight = item.offsetLeft + item.offsetWidth;
+            const itemRect = item.getBoundingClientRect();
+            const itemCenterX = itemRect.left + itemRect.width / 2;
+            const itemCenterY = itemRect.top + window.scrollY + itemRect.height / 2; // Consider scroll position
 
-            if (e.pageY >= itemPositionTop - mouseHeight / 2 
-            && e.pageY <= itemPositionbottom + mouseHeight / 2
-            && e.pageX >= itemPositionLeft - mouseWidth / 2
-            && e.pageX <= itemPositionRight + mouseWidth / 2) 
-            
-                {
-                    item.classList.add('hovered');
-                    setTimeout(function() {
-        item.classList.remove('hovered');
-    }, 250); 
-                }
+            const fullDistance = Math.sqrt((mouseX - itemCenterX) ** 2 + (mouseY - itemCenterY) ** 2);
+            const halfDistance = fullDistance * 2;
+            const quarterDistance = fullDistance * 4;
 
-        };
+            if (fullDistance <= mouseRadius) {
+                item.classList.add('hovered');
+                // setTimeout(function() {
+                //     item.classList.remove('hovered');
+                // }, 250);
+            }
+            else {
+                item.classList.remove('hovered');
+            }
+        }
     };
 
     document.addEventListener('mousemove', handleMouseMove);
 };
+
+
 
     document.addEventListener('mousemove', mouseTracker())
     preHoverEffect('letter');

@@ -31,5 +31,5 @@ body {
     background: radial-gradient(circle at center, rgb(22.4%,0%,45.1%), rgb(7.5%,0%,14.9%) 70%, rgb(7.5%,0%,14.9%) 100%);
     position: absolute;
     z-index: -1;
-    border: 2px solid rgb(22.4%,0%,45.1%);
+    /* border: 2px solid rgb(22.4%,0%,45.1%); */
 }
