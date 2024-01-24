@@ -51,25 +51,28 @@
         </div>
 
         <div class="project-description-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum odit doloribus, rerum eligendi molestias consequatur ut ipsam labore possimus nam enim accusamus ex incidunt explicabo sit nesciunt. Inventore, recusandae minus.
+            lor
         </div>
 
 
 </body>
 <script>
 
-const splitText = (myClass) => {
-    const elements = document.getElementsByClassName(myClass);
-    const elementsArray = Array.from(elements); // Convert HTMLCollection to array
+    function splitText(myClass) {
+        const elements = document.getElementsByClassName(myClass);
+        const elementsArray = Array.from(elements); // Convert HTMLCollection to array
 
-    elementsArray.forEach((element, index) => {
-        const text = element.textContent;
-        const modifiedText = text.split('').map(letter => `<span class='letter'>${letter}</span>`).join('');
-        element.innerHTML = modifiedText;
-    });
-}
+        elementsArray.forEach((element, index) => {
+            // collect parent element's text content
+            const parentElement = element.parentElement;
+            console.log(parentElement);
+            const text = element.textContent;
+            const modifiedText = text.split('').map(letter => `<span class='letter childOf${parentElement.id}'>${letter}</span>`).join('');
+            element.innerHTML = modifiedText;
+        });
+    }
 
-    const mouseTracker = () => {
+    function mouseTracker() {
         const mouse = document.querySelector('.mouse');
         document.addEventListener('mousemove', (e) => {
             divWidth = mouse.offsetWidth;
@@ -82,46 +85,39 @@ const splitText = (myClass) => {
     }
 
 
-    const preHoverEffect = (itemClassName) => {
-    const mouse = document.querySelector('.mouse');
-    const items = document.getElementsByClassName(itemClassName);
-    const mouseWidth = mouse.offsetWidth;
-    const mouseHeight = mouse.offsetHeight;
-    const mouseRadius = Math.sqrt((mouseWidth / 2) ** 2 + (mouseHeight / 2) ** 2) * .75;
+    function preHoverEffect(itemClassName){
+        const mouse = document.querySelector('.mouse');
+        const items = document.getElementsByClassName(itemClassName);
+        const mouseWidth = mouse.offsetWidth;
+        const mouseHeight = mouse.offsetHeight;
+        const mouseRadius = Math.sqrt((mouseWidth / 2) ** 2 + (mouseHeight / 2) ** 2) * .75;
 
-    const handleMouseMove = (e) => {
-        const mouseX = e.pageX;
-        const mouseY = e.pageY;
+        const handleMouseMove = (e) => {
+            const mouseX = e.pageX;
+            const mouseY = e.pageY;
 
-        for (let item of items) {
-            const itemRect = item.getBoundingClientRect();
-            const itemCenterX = itemRect.left + itemRect.width / 2;
-            const itemCenterY = itemRect.top + window.scrollY + itemRect.height / 2; // Consider scroll position
+            Array.from(items).forEach((item, index) => {
+                const itemCenterX = item.offsetLeft + item.offsetWidth / 2;
+                const itemCenterY = item.offsetTop + item.offsetHeight / 2;
+                const distance = Math.sqrt((mouseX - itemCenterX) ** 2 + (mouseY - itemCenterY) ** 2);
 
-            const fullDistance = Math.sqrt((mouseX - itemCenterX) ** 2 + (mouseY - itemCenterY) ** 2);
-            const halfDistance = fullDistance * 2;
-            const quarterDistance = fullDistance * 4;
-
-            if (fullDistance <= mouseRadius) {
-                item.classList.add('hovered');
-                // setTimeout(function() {
-                //     item.classList.remove('hovered');
-                // }, 250);
+                if (distance <= mouseRadius) {
+                    const intensity = Math.max(200, 255 - Math.floor((distance  / mouseRadius ) * 255));
+                    item.style.color = `rgb(${intensity}, ${intensity}, ${intensity})`;
+                }
+                else {
+                    item.style.color = 'rgb(180,180,180)';
+                }
             }
-            else {
-                item.classList.remove('hovered');
-            }
-        }
+        )}
+        document.addEventListener('mousemove', handleMouseMove);
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
-};
 
 
-
-    document.addEventListener('mousemove', mouseTracker())
-    preHoverEffect('letter');
-    splitText('project-description-text')
+document.addEventListener('mousemove', mouseTracker())
+preHoverEffect('letter');
+splitText('project-description-text')
 </script>
 </html>
 
