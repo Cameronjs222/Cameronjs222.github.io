@@ -6,9 +6,11 @@
     <title>Cameron Shaffer Portfolio.</title>
     <link rel="stylesheet" href="newStyle.css">
 </head>
-<body>
-    <a href="http://congressonpalestine.com" target="_blank">
-        <div class="deployedProjects test" id="secondWindow">
+<body id="body">
+    <div class="container">
+
+        <a href="http://congressonpalestine.com" target="_blank">
+            <div class="deployedProjects test" id="secondWindow">
                 <img src="./img/Screen Shot 2024-01-15 at 1.50.42 PM.png" alt="Congress On Palestine home page" class="img projectImg" id="congressOnPalestine" style="max-width: 35rem;">
                 <div class="project-description" id="congressOnPalestineDescription">
                     <span class="project-description-text">
@@ -20,54 +22,71 @@
                 </div>
             </div>
         </a>
-
+        
         <div class="projects">
             <div class="project">
                 <div class="youtube-videos">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/fkuU_37IoNs?si=kaW_iyyZTT39R22p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
-                <div class="project-description" id="techTalkDescription">
-                    <span class="project-description-text">
-                        As the leader of this dynamic group project, I orchestrated the swift development of a fully functional mock social media platform. Our collaborative efforts resulted in the seamless creation of user profiles, enabling individuals to post, comment, and follow others within the simulated environment. This project showcases our proficiency in rapid prototyping and collaborative teamwork, highlighting our ability to deliver a comprehensive and interactive social media experience.
-                    </span>
+                    <div class="project-description" id="techTalkDescription">
+                        <span class="project-description-text">
+                            As the leader of this dynamic group project, I orchestrated the swift development of a fully functional mock social media platform. Our collaborative efforts resulted in the seamless creation of user profiles, enabling individuals to post, comment, and follow others within the simulated environment. This project showcases our proficiency in rapid prototyping and collaborative teamwork, highlighting our ability to deliver a comprehensive and interactive social media experience.
+                        </span>
+                    </div>
+                </div>
+                <div class="project">
+                    
+                    <div class="youtube-videos">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/6-nR0xthmhk" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-description" id="candelaObscuraDescription">
+                        <span class="project-description-text">
+                            
+                            Embark on a solo project journey with my fully functional character tracker designed for the tabletop RPG, Candela Obscura. This tool streamlines character management, allowing users to create profiles, track characters and skills, and connect with others in the simulated environment. Demonstrating rapid prototyping and collaborative skills, this project showcases my ability to deliver comprehensive and interactive websites. Join me on this virtual adventure, where creativity and functionality converge to enhance the tabletop gaming experience!                </span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project">
-    
-                <div class="youtube-videos">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6-nR0xthmhk" frameborder="0"
-                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                
+                
+                <div class="mouse">
+                    
                 </div>
-                <div class="project-description" id="candelaObscuraDescription">
-                    <span class="project-description-text">
-    
-                        Embark on a solo project journey with my fully functional character tracker designed for the tabletop RPG, Candela Obscura. This tool streamlines character management, allowing users to create profiles, track characters and skills, and connect with others in the simulated environment. Demonstrating rapid prototyping and collaborative skills, this project showcases my ability to deliver comprehensive and interactive websites. Join me on this virtual adventure, where creativity and functionality converge to enhance the tabletop gaming experience!                </span>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="mouse">
-
-        </div>
-
-        <div class="project-description-text">
-            lor
-        </div>
+                
+                <h2 style="display: none; margin: auto; position: absolute; color: rgb(7.5%,0%,14.9%); top: 100%; left: 50%; opacity: .5;" id="hiddenMessage">
+                    Behind You
+        </h2>
 
 
 </body>
 <script>
+let screenHeight = document.body.clientHeight;
+let called = false;
+
+function checkScrollHeight() {
+    if (document.documentElement.scrollHeight > screenHeight * 2 && !called) {
+        let hiddenMessage = document.getElementById('hiddenMessage')
+        hiddenMessage.style.top = screenHeight * 1.5 + 'px';
+        hiddenMessage.style.display = 'block';
+        called = true;
+        setTimeout(() => {
+            hiddenMessage.style.opacity = 0;
+            hiddenMessage.style.transition = 'opacity 1s';
+        }, 1000);
+    }
+}
+
+// Attach the event listener to the window's scroll event
+window.addEventListener('scroll', checkScrollHeight);
+
 
     function splitText(myClass) {
         const elements = document.getElementsByClassName(myClass);
         const elementsArray = Array.from(elements); // Convert HTMLCollection to array
 
         elementsArray.forEach((element, index) => {
-            // collect parent element's text content
-            const parentElement = element.parentElement;
-            console.log(parentElement);
             const text = element.textContent;
-            const modifiedText = text.split('').map(letter => `<span class='letter childOf${parentElement.id}'>${letter}</span>`).join('');
+            const modifiedText = text.split('').map(letter => `<span class='letter'>${letter}</span>`).join('');
             element.innerHTML = modifiedText;
         });
     }
@@ -75,12 +94,16 @@
     function mouseTracker() {
         const mouse = document.querySelector('.mouse');
         document.addEventListener('mousemove', (e) => {
-            divWidth = mouse.offsetWidth;
-            divHeight = mouse.offsetHeight;
-            let adjustedXValue = e.pageX - (divWidth / 2);
-            let adjustedYValue = e.pageY - (divHeight / 2);
-            mouse.style.left = adjustedXValue + 'px';
-            mouse.style.top = adjustedYValue + 'px';
+            setTimeout(() => {
+                divWidth = mouse.offsetWidth;
+                divHeight = mouse.offsetHeight;
+                let adjustedXValue = e.pageX - (divWidth / 2);
+                let adjustedYValue = e.pageY - (divHeight / 2);
+                mouse.style.left = adjustedXValue + 'px';
+                mouse.style.top = adjustedYValue + 'px';
+            }, 150);            
+        })
+        document.addEventListener('scroll', (e) => {
         })
     }
 
@@ -106,7 +129,7 @@
                     item.style.color = `rgb(${intensity}, ${intensity}, ${intensity})`;
                 }
                 else {
-                    item.style.color = 'rgb(180,180,180)';
+                    item.style.color = 'rgb(175,175,175)';
                 }
             }
         )}
