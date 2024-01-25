@@ -16,10 +16,10 @@ const scrollImg = () => {
 const window1 = document.getElementById('firstWindow');
 const window2 = document.getElementById('secondWindow');
 
-document.getElementById('navigateButton').addEventListener('click', function() {
-    // Redirect to the next page (nextPage.html)
-    window.location.href = 'newIndex.html';
-});
+// document.getElementById('navigateButton').addEventListener('click', function() {
+//     // Redirect to the next page (nextPage.html)
+//     window.location.href = 'newIndex.html';
+// });
 
 
 const emailButton = document.getElementById("emailButton");
@@ -30,6 +30,14 @@ const emailLink = () => {
     window.location.href = mailtoLink;
 }
 
-emailButton.addEventListener("click", emailLink);
+// emailButton.addEventListener("click", emailLink);
 // window.addEventListener('scroll', textOpacity);
-window.addEventListener('scroll', scrollImg);
+// window.addEventListener('scroll', scrollImg);
+
+function checkScrollHeight() {
+    console.log("hello");
+    if (document.documentElement.scrollHeight > screenHeight * 6.5) {
+        alert("You have reached the bottom of the page");
+    }
+}
+document.addEventListener('scroll', checkScrollHeight);

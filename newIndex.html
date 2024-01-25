@@ -54,8 +54,9 @@
                 </div>
                 
                 <h2 style="display: none; margin: auto; position: absolute; color: rgb(7.5%,0%,14.9%); top: 100%; left: 50%; opacity: .5;" id="hiddenMessage">
-                    Behind You
-        </h2>
+                    Embrace the void...
+                    <!--  -->
+                </h2>
 
 
 </body>
@@ -64,9 +65,9 @@ let screenHeight = document.body.clientHeight;
 let called = false;
 
 function checkScrollHeight() {
-    if (document.documentElement.scrollHeight > screenHeight * 2 && !called) {
+    if (document.documentElement.scrollHeight > screenHeight * 2.5 && !called) {
         let hiddenMessage = document.getElementById('hiddenMessage')
-        hiddenMessage.style.top = screenHeight * 1.5 + 'px';
+        hiddenMessage.style.top = screenHeight * 2 + 'px';
         hiddenMessage.style.display = 'block';
         called = true;
         setTimeout(() => {
@@ -125,11 +126,11 @@ window.addEventListener('scroll', checkScrollHeight);
                 const distance = Math.sqrt((mouseX - itemCenterX) ** 2 + (mouseY - itemCenterY) ** 2);
 
                 if (distance <= mouseRadius) {
-                    const intensity = Math.max(200, 255 - Math.floor((distance  / mouseRadius ) * 255));
+                    const intensity = Math.max(190, 255 - Math.floor((distance  / mouseRadius ) * 255));
                     item.style.color = `rgb(${intensity}, ${intensity}, ${intensity})`;
                 }
                 else {
-                    item.style.color = 'rgb(175,175,175)';
+                    item.style.color = 'rgb(180,180,180)';
                 }
             }
         )}
@@ -142,6 +143,7 @@ document.addEventListener('mousemove', mouseTracker())
 preHoverEffect('letter');
 splitText('project-description-text')
 </script>
+<script src="app.js"></script>
 </html>
 
 <!-- TODO: 
