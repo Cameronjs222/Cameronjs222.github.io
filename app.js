@@ -34,10 +34,10 @@ const emailLink = () => {
 // window.addEventListener('scroll', textOpacity);
 // window.addEventListener('scroll', scrollImg);
 
-function checkScrollHeight() {
-    console.log("hello");
-    if (document.documentElement.scrollHeight > screenHeight * 6.5) {
-        alert("You have reached the bottom of the page");
-    }
-}
-document.addEventListener('scroll', checkScrollHeight);
+// function checkScrollHeight() {
+//     console.log("hello");
+//     if (document.documentElement.scrollHeight > screenHeight * 6.5) {
+//         alert("You have reached the bottom of the page");
+//     }
+// }
+// document.addEventListener('scroll', checkScrollHeight);

@@ -4,17 +4,6 @@
     box-sizing: border-box;
 }
 
-.container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-
-.testing {
-    z-index: 1;
-}
 .headShot {
     width: 33%;
     height: 100vh;
@@ -48,9 +37,6 @@
     gap: 2.5rem;
 }
 
-.refelctiveWrapper {
-    font-size: xx-large;
-}
 .shortDescription {
     width: 100%;
     display: flex;
@@ -63,33 +49,7 @@
     border: 1px solid;
 }
 
-.contents {
-    width: 67%;
-    height: 100vh;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    align-self: end;
-    flex-direction: column;
-    right: 0;
-    border: 2px solid rgb(22.4%,0%,45.1%);
-    color: white;
-}
-.project-description-text {
-    color: white;
-}
 
-.letter {
-    color: rgb(200,200,200)
-}
-
-.hovered {
-    color: white;
-}
-
-.test {
-    color: white;
-}
 
 body {
     background-color: rgb(7.5%,0%,14.9%);
