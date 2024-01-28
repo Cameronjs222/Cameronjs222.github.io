@@ -16,10 +16,10 @@ const scrollImg = () => {
 const window1 = document.getElementById('firstWindow');
 const window2 = document.getElementById('secondWindow');
 
-// document.getElementById('navigateButton').addEventListener('click', function() {
-//     // Redirect to the next page (nextPage.html)
-//     window.location.href = 'newIndex.html';
-// });
+document.getElementById('navigateButton').addEventListener('click', function() {
+    // Redirect to the next page (nextPage.html)
+    window.location.href = 'newIndex.html';
+});
 
 
 const emailButton = document.getElementById("emailButton");
