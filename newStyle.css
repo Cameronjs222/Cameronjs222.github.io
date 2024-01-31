@@ -118,3 +118,12 @@ body {
 
     /* border: 2px solid rgb(22.4%,0%,45.1%); */
 }
+
+.resume {
+    border: 2px solid grey;
+    box-shadow: 0 0 10px 5px grey;
+}
+.resume:hover {
+    box-shadow: 0 0 10px 5px white;
+}
+```
