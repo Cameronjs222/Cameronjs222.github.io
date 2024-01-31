@@ -1,138 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <title>Cameron Shaffer Portfolio.</title>
+    <link rel="stylesheet" href="newStyle.css">
 </head>
-
-<body>
-    <div class="mainContainer">
-        <div class="openingVid">
-            <video autoplay muted loop>
-                <source src="./vids/production_id_4443250 (540p).mp4" type="video/mp4">
-            </video>
+<body id="body">
+    <div class="headShot">
+        <div class="nav reflectiveElement">
+            <a href="#bio">
+                <div class="navItem">
+                    <span class="navItemText reflective">Bio</span>
+                </div>
+            </a>
+            <a href="#projects">
+                <div class="navItem">
+                    <span class="navItemText reflective">Projects</span>
+                </div>
+            </a>
+            <a href="#contact">
+                <div class="navItem">
+                    <span class="navItemText reflective">Contact</span>
+                </div>
+            </a>
+            
         </div>
-        <div class="name">
-
-            <span>
-                Cameron Shaffer
-            </span><br>
-            <span>
-                Full Stack Developer
-            </span><br>
-
+        <div class="photoAndName">
+            
+            <div class="photo">
+                <img src="./img/IMG_2882.jpg" alt="Cameron Shaffer headshot" class="img reflectiveElement" id="myFace">
+            </div>
+            <div class="shortDescription">
+                <h2 class="reflective" id="myName">Cameron Shaffer</h2>
+                <h2 class="reflective">Full-Stack developer</h2>
+                <h2 class="reflective">Java, Javascript, Python</h2>
+            </div>
         </div>
-        <!-- <ul class="list nav-links d-flex justify-content-evenly">
-            <li class="content">
-                <a class="btn btn-outline-dark opacity-75 custom_button" href="#"><span>Projects</span></a>
-            </li>
-            <li class="content">
-                <a class="btn btn-outline-dark opacity-75 custom_button" href="#"><span>About</span></a>
-            </li>
-            <li class="content">
-                <a class="btn btn-outline-dark opacity-75 custom_button" href="#"><span>Contact</span></a>
-            </li>
-        </ul> -->
-        <div class="about">
-            <!-- set max and min size for photo -->
-            <img src="./img/IMG_2882.jpg" alt="" id="Selfie">
-            <div class="bio">
-                <p>
-                    I'm Cameron Shaffer, a versatile Full Stack Developer, fluent in the languages of Java, Python, and
-                    JavaScript. My journey in the world of technology is a testament to my unwavering passion for
-                    continuous learning and my relentless pursuit of innovative, creative solutions. I thrive on
-                    mastering new technologies, creating practical and inventive solutions, and leaving a positive mark
-                    on the digital landscape with every line of code I write.
+        <div></div>
+        <div></div>
+        </div>
 
+        <div class="container">
+            <div class="slide" id="bio">
+                <p class="reflective">
+                    Greetings, I'm Cameron Shaffer, a Full Stack Developer with expertise in Java, Python, and JavaScript. My journey in technology is fueled by a deep-seated passion for continual learning and a drive to innovate. I find joy in mastering new technologies and using them to bring my creative ideas to life, crafting practical, inventive solutions. With every line of code I write, my goal is to leave a positive imprint on the digital landscape, contributing meaningfully to the evolving tech sphere.
+                </p>
                 <p>
-                    Check out some of my most recent projects below!
+
                 </p>
             </div>
-        </div>
-
-    </div>
-
-    <a href="http://congressonpalestine.com" target="_blank">
-    <div class="deployedProjects" id="secondWindow">
-            <img src="./img/Screen Shot 2024-01-15 at 1.50.42 PM.png" alt="Congress On Palestine home page" class="projectImg" id="congressOnPalestine">
-            <div class="project-desciption">
-                <span>
-                    My latest solo project, a fully deployed website designed to track, filter, and publish the public statements of US congress members in relation to the genocide of Palestinan people. It may look simple, but this project required the combination of mulitple api's, a thoughough backend database, and fully dynamic front end. Automatically and efficiently collecting, storing, and displaying hundreds of thousands of twitter post; this project involved a large degree of optimization and efficiency.
-                </span> 
-                <h3>
-                    <--- Click the image to check it out!
-                </h3>
+            <div class="slide" id="projects">
+                <div class="header">
+                    <p class="reflectiveElement">Projects</p>
+                    
+                </div>
+                <div class="project">
+                    <img src="./img/Screen Shot 2024-01-15 at 1.50.42 PM.png" 
+                    alt="congressOnPalestine home page" 
+                    class="projectImg" 
+                    id="congressOnPalestine"
+                    style="width: 50%;">
+                <div class="projectContent">
+                    <div class="projectTitle reflectiveElement">
+                        <span class="reflective">
+                            congressOnPalestine.com
+                        </span>
+                        <span class="reflective">
+                            Solo Project
+                        </span>
+                    </div>
+    
+                    <div class="shortDescription">
+                        <span class="reflective">
+                            Solo Project: An agrogete of mulitple API's designed to condesne congress officials public stances to highlihgt thier stance on palestine.
+                        </span>
+                    
+                    </div>
+                </div>
             </div>
-        </div>
-    </a>
+                <div class="project">
+                    <img src="./img/2023-09-26 16.42.55 obscura.eggheaddev.tech 4223a1eee3d2.png" 
+                    alt="Candela Obscura home page" 
+                    class="projectImg" 
+                    id="CandelaObscura"
+                    style="width: 50%;">
 
-    <div class="contact">
-        <h1>Contact Me</h1>
-        <p>(916)-671-4473</p>
-
-        <div class="contactInfo">
-            <div class="conntactIcon" id="emailButton">
-
+                <div class="projectContent">
+                    <div class="projectTitle reflectiveElement">
+                        <span class="reflective">
+                            Candela Obscura
+                        </span>
+                        <span class="reflective">
+                            Solo Project
+                        </span>
+                    </div>
+                    <div>
+                        <span class="reflective">
+                            Solo Project: A fully operationation character tracking sheet for a table top rpg, Candele Obscura. Matching many of the core functionality of online D&D character sheets such as D&D Beyond.
+                        </span>
+                    </div>
+                </div>
             </div>
-            <a href="https://github.com/Cameronjs222" target="_blank">
-                <div class="conntactIcon" id="githubButton"></div>
-            </a>
-            <a href="https://www.linkedin.com/in/cameron-shaffer222/" target="_blank">
-                <div class="conntactIcon" id="linkedinButton"></div>
-            </a>
+            
+                <div class="project">
+                    <img src="./img/2023-09-27 14.54.04 localhost 2208c7ad3e9e.png" 
+                    alt="Candela Obscura home page" 
+                    class="projectImg" 
+                    id="techTalk"
+                    style="width: 50%;">
+                    <div class="projectContent">
+                        <div class="projectTitle reflectiveElement">
+                                <span class="reflective">
+                                    Tech Talk
+                                </span>
+                                <span class="reflective">
+                                    Group Project
+                                </span>
+                        </div>
+                        <div>
+                            <span class="reflective">
+                                Solo Project: A fully operationation character tracking sheet for a table top rpg, Candele Obscura. Matching many of the core functionality of online D&D character sheets such as D&D Beyond.
+                            </span>
+                        </div>
+                    </div>
+                </div>
         </div>
-    </div>
-
-    </div>
-    </div>
-    <div class="projects">
-        <div class="project">
-            <div class="youtube-videos">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/fkuU_37IoNs?si=kaW_iyyZTT39R22p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
-            <div class="project-desciption">
-                <span>
-                    As the leader of this dynamic group project, I orchestrated the swift development of a fully functional mock social media platform. Our collaborative efforts resulted in the seamless creation of user profiles, enabling individuals to post, comment, and follow others within the simulated environment. This project showcases our proficiency in rapid prototyping and collaborative teamwork, highlighting our ability to deliver a comprehensive and interactive social media experience.
+        <div class="slide" id="contact" style="height: auto;">
+            <div class="header">
+                <span class="reflective">
+                    Contact Me
                 </span>
             </div>
-        </div>
-        <div class="project">
 
-            <div class="youtube-videos">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/6-nR0xthmhk" frameborder="0"
-                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div>
+                <p class="reflective">(916)-671-4473</p>
             </div>
-            <div class="project-desciption">
-                <span>
 
-                    Embark on a solo project journey with my fully functional character tracker designed for the tabletop RPG, Candela Obscura. This tool streamlines character management, allowing users to create profiles, track characters and skills, and connect with others in the simulated environment. Demonstrating rapid prototyping and collaborative skills, this project showcases my ability to deliver comprehensive and interactive websites. Join me on this virtual adventure, where creativity and functionality converge to enhance the tabletop gaming experience!                </span>
-            </div>
+                <div>
+                    <div class="contactInfo">
+                        <div class="contactIcon" id="emailButton">
+                            <a href="mailto:Cameronshaffer95@gmail.com">
+                                <img src="./img/gmail-logo-transparent-2.png" alt="email icon" class="contactIcon" 
+                                style="width: 2.5rem;">
+                            </a>
+                        </div>
+                        <div class="contactIcon" id="githubButton">
+                            <a href="https://github.com/Cameronjs222"
+                            target="_blank">
+                                <img src="./img/GitHub-Mark.png" alt="github icon" class="contactIcon" 
+                                style="width: 2.5rem;">
+                            </a>
+                        </div>
+                        <div class="contactIcon" id="linkedinButton">
+                            <a href="https://www.linkedin.com/in/cameron-shaffer222/"
+                            target="_blank">
+                                <img src="./img/linkedin-icon-logo-png-transparent-2048x2048.png" alt="linkedin icon" class="contactIcon" 
+                                style="width: 2.5rem;">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <a href="./img/Cameron Shaffer Resume.pdf" download>
+                    <img src="./img/Resume img.png" alt="Resume Pic, download link" 
+                    style="width: 100%">
+    
+                </a>
+                
+                
         </div>
-    </div>
-    <div class="contact">
-            <p>If you would like to see more, here you can download my resume and explore more of my projects.
-            </p><br/>
-            <!-- download pdf for resumer -->
-            <a href="./img/Cameron Shaffer Resume.pdf" download>
-                <button id="resumeButton">
-                    <span>Download Resume</span>
-                </button>
 
-            </a>
-            <!-- <button id="navigateButton">
-                New Page
-            </button> -->
-        </div>
-  
+    <div class="mouse">
+        
     </div>
-
+    
+    
+    
+                <!-- <div class="mouse">
+                    
+                </div>
+                <h2 style="display: none; margin: auto; position: absolute; color: rgb(7.5%,0%,14.9%); top: 100%; left: 50%; opacity: .5;" id="hiddenMessage">
+                    Embrace the void...
+                </h2> -->
 
 
 </body>
-<script src="app.js"></script>
+<script>
+let screenHeight = document.body.clientHeight;
+let called = false;
+let nameWidth = document.getElementById('myName').offsetWidth;
+document.getElementById('myFace').style.width = nameWidth + 'px';
 
+function checkScrollHeight() {
+    if (document.documentElement.scrollHeight > screenHeight * 2.5 && !called) {
+        let hiddenMessage = document.getElementById('hiddenMessage')
+        hiddenMessage.style.top = screenHeight * 2 + 'px';
+        hiddenMessage.style.display = 'block';
+        called = true;
+        setTimeout(() => {
+            hiddenMessage.style.opacity = 0;
+            hiddenMessage.style.transition = 'opacity 1s';
+        }, 1000);
+    }
+}
+
+// Attach the event listener to the window's scroll event
+window.addEventListener('scroll', checkScrollHeight);
+
+
+    function splitText(myClass) {
+        const elements = document.getElementsByClassName(myClass);
+        const elementsArray = Array.from(elements); // Convert HTMLCollection to array        
+
+        // elementsArray.map((div, index) => {
+        //     let modifiedWrapper = `<div class='reflectiveWrapper' id='wrapper${index}'>${div.innerHTML}</div>`;
+        //     div.outerHTML = modifiedWrapper;
+        // }
+        // );
+
+        elementsArray.forEach((element, index) => {
+            const text = element.textContent;
+            const modifiedText = text.split('').map(letter => `<span class='reflectiveElement'>${letter}</span>`).join('');
+            element.innerHTML = modifiedText;
+        });
+    }
+
+    function mouseTracker() {
+    const mouse = document.querySelector('.mouse');
+    let scrollY = window.scrollY;
+
+    document.addEventListener('mousemove', (e) => {
+        setTimeout(() => {
+            divWidth = mouse.offsetWidth;
+            divHeight = mouse.offsetHeight;
+            let adjustedXValue = e.pageX - (divWidth / 2);
+            let adjustedYValue = e.pageY - (divHeight / 2);
+            mouse.style.left = adjustedXValue + 'px';
+            mouse.style.top = adjustedYValue - scrollY + 'px';
+        }, 150);
+    });
+
+    document.addEventListener('scroll', (e) => {
+        scrollY = window.scrollY;
+    });
+}
+
+
+    function preHoverEffect(itemClassName){
+        const mouse = document.querySelector('.mouse');
+        const items = document.getElementsByClassName(itemClassName);
+        const mouseWidth = mouse.offsetWidth;
+        const mouseHeight = mouse.offsetHeight;
+        const mouseRadius = Math.sqrt((mouseWidth / 2) ** 2 + (mouseHeight / 2) ** 2) * .75;
+
+        const handleMouseMove = (e) => {
+            const mouseX = e.pageX;
+            const mouseY = e.pageY;
+
+            Array.from(items).forEach((item, index) => {
+                const itemCenterX = item.offsetLeft + item.offsetWidth / 2;
+                const itemCenterY = item.offsetTop + item.offsetHeight / 2;
+                const distance = Math.sqrt((mouseX - itemCenterX) ** 2 + (mouseY - itemCenterY) ** 2);
+
+                if (distance <= mouseRadius) {
+                    const intensity = Math.max(190, 255 - Math.floor((distance  / mouseRadius ) * 255));
+                    item.style.color = `rgb(${intensity}, ${intensity}, ${intensity})`;
+                }
+                else {
+                    item.style.color = 'rgb(180,180,180)';
+                }
+            }
+        )}
+        document.addEventListener('mousemove', handleMouseMove);
+    };
+
+
+
+document.addEventListener('mousemove', mouseTracker())
+preHoverEffect('reflectiveElement');
+splitText('reflective')
+</script>
+<script src="app.js"></script>
 </html>
+
+<!-- TODO: 
+    - fade out highlihgt when mouse stops moving
+    - set highlihgt to change opacity
+    - set to check if mouse is close to box of text before checking if contents are close to mouse -->
