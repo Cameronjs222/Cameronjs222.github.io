@@ -139,4 +139,9 @@ body {
 .resume:hover {
     box-shadow: 0 0 10px 5px white;
 }
-```
+
+#bio p {
+    font-size: 25px;
+    font-weight: bold;
+    width: 50%;
+}
