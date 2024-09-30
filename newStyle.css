@@ -4,93 +4,138 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(7.5%, 0%, 14.9%);
+    font-size: 16px; /* Base font size */
+}
+
 .headShot {
     width: 33%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
     position: fixed;
     left: 0;
     border: 2px solid white;
     color: white;
 }
-.nav {
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    border-bottom: 2px solid white;
-    color: white;
+
+.projectImg {
+    /* width: 100%; */
+    height: 460px;
+    border: 2px solid white;
 }
-.photoAndName {
+
+.scrollableImgs {
     width: 100%;
-    height: 20%;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 25px;
+    overflow: scroll;
+    background-color: white;
+}
+
+.top {
+    width: 100%;
+    border-bottom: 3px solid;
+    margin-bottom: -20px;
+}
+
+.bottom {
+    width: 100%;
+    border-top: 3px solid;
+    margin-top: -39px;
+}
+
+.imgContainer {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -44px;
+    /* gap: 2.5rem; */
+}
+
+.projectContent {
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    color: white;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 10px;
+}
+
+.nav {
+    width: 100%;
+    height: 10vh; /* Change to vh for better responsiveness */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid white;
+}
+
+.photoAndName {
+    width: 100%;
+    height: 20vh; /* Change to vh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 2.5rem;
 }
 
 .shortDescription {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    color: white;
 }
+
 .img {
     border: 1px solid;
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .slide {
-    width: 66%; 
-    /* height: 100vh; */
+    width: 66%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    color: white;
     gap: 2.5rem;
     margin-left: 33%;
     padding: 10%;
     text-align: center;
 }
-.project {
+
+.project, .youtubeProject {
     width: 100%;
-    height: 100%;
     display: flex;
     justify-content: space-around;
-    align-items: start;
-    color: white;
+    align-items: flex-start;
     gap: 2.5rem;
-    text-align: center;
-    text-align: start;
 }
 
-.youtubeProject {
+.youtube-videos {
     width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    color: white;
-    text-align: center;
-    text-align: start;
-
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin-top: 25px;
 }
 
 .projectTitle {
     border-bottom: 2px solid;
     display: flex;
     justify-content: space-between;
-    margin: 0 0 1rem 0;
+    margin-bottom: 1rem;
 }
 
 .contactInfo {
@@ -98,50 +143,76 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     gap: 2.5rem;
-    text-align: center;
 }
-.slide p  {
-    border-bottom: white;
 
-}
-/* .mouse is a div that follows the mouse around. I don't want it to be able to interact with the screen. Such as increasing the length of the page when it is pressed to the bottom of the page */
-.header {
-    width: 100%;
-    color: white;
-    font-size: xx-large;
-    gap: 2.5rem;
+.slide p {
     border-bottom: 1px solid white;
 }
 
-body {
-    background-color: rgb(7.5%,0%,14.9%);
+.header {
+    width: 100%;
+    color: white;
+    font-size: 2rem; /* Responsive font size */
+    gap: 2.5rem;
+    border-bottom: 1px solid white;
 }
 
 .mouse {
     width: 75rem;
     height: 75rem;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgb(22.4%,0%,45.1%), rgb(7.5%,0%,14.9%) 70%, rgb(7.5%,0%,14.9%) 100%);
-    position: absolute;
+    background: radial-gradient(circle at center, rgb(22.4%, 0%, 45.1%), rgb(7.5%, 0%, 14.9%) 70%, rgb(7.5%, 0%, 14.9%) 100%);
+    position: fixed;
     z-index: -1;
     pointer-events: none;
-    position: fixed;
-
-    /* border: 2px solid rgb(22.4%,0%,45.1%); */
 }
 
 .resume {
     border: 2px solid grey;
     box-shadow: 0 0 10px 5px grey;
 }
+
 .resume:hover {
     box-shadow: 0 0 10px 5px white;
 }
 
 #bio p {
-    font-size: 25px;
+    font-size: 1.5rem; /* Responsive font size */
     font-weight: bold;
-    width: 50%;
+    width: 90%;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .headShot {
+        width: 100%;
+        height: auto; /* Allow flexibility on smaller screens */
+        position: relative; /* Change to relative */
+        order: -1; /* Ensure it appears at the top */
+    }
+    .slide {
+        width: 100%;
+        margin-left: 0;
+    }
+    .nav, .photoAndName, .shortDescription, .contactInfo {
+        flex-direction: column;
+    }
+    .header {
+        font-size: 1.5rem;
+    }
+    #bio p {
+        width: 90%; /* Use more width on smaller screens */
+        margin-top: 25%;
+    }
+    .
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.2rem;
+    }
+    .resume {
+        width: 90%; /* Adjust resume size */
+    }
 }
