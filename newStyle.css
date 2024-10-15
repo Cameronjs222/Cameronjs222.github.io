@@ -183,6 +183,9 @@ body {
     width: 90%;
 }
 
+#contact {
+    margin-left: 0;
+}
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .headShot {
