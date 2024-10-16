@@ -9,6 +9,10 @@ body {
     font-size: 16px; /* Base font size */
 }
 
+.reflective {
+    color: white
+}
+
 .headShot {
     width: 33%;
     height: 100vh;
