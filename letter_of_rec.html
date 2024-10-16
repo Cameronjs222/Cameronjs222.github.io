@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cameron Shaffer Portfolio.</title>
+    <link rel="stylesheet" href="newStyle.css">
+</head>
+
+<body>
+    <div class="letter-container">
+        <h1 class="letter-title">Letter of Recommendation from Yamil Imaad</h1>
+        <div class="letter-content">
+            <p class="reflective">  I am writing to wholeheartedly recommend Cameron Shaffer, who served as a frontend team member at Revent for around 10 months, contributing significantly to the development of our WalletWize app. During his time with us, Cameron proved to be an invaluable team member, consistently demonstrating strong teamwork, communication, and technical skills.</p>
+            
+            <p class="reflective">  Cameron was primarily responsible for developing user interfaces for the WalletWize app and played an essential role in integrating payment processors, such as RevenueCat, into our app for Apple platforms. His ability to adapt and improve his skills during his time at Revent was impressive, and he continually sought opportunities to grow as a dynamic programmer. Cameron worked on various components of the app, always willing to offer his assistance to teammates and never hesitated to reach out for help when needed.</p>
+            
+            <p class="reflective">  One of Cameron's most admirable qualities was his dedication to the team. He took on the responsibility of onboarding new team members and ensuring that our environments were properly synced, helping maintain smooth operations. His work ethic and reliability in completing tasks within a reasonable timeframe were exceptional, and he was always receptive to constructive feedback, using it to further refine his abilities.</p>
+            
+            <p class="reflective">  Cameron’s loyalty and commitment to our team were evident throughout his tenure, and he consistently fostered a collaborative environment. His effective communication and openness to feedback made him a pleasure to work with, and he contributed to a positive and productive team dynamic.</p>
+            
+            <p class="reflective">  I am confident that Cameron will continue to excel in any future endeavors, and I strongly recommend him as a valuable addition to any team.</p>
+            
+            <span class="reflective">Sincerely,</span><br/>
+            <span class="reflective">Yamil Imaad</span><br/>
+            <span class="reflective">CEO, Revent Solutions</span>
+        </div>
+        <div class="mouse"></div>
+    </div>
+</body>
+<!-- <script>
+    // I included the script in the html file in case anyone viewnig my portfolio wants to see the code that runs the custom functionality of the page.
+
+    function splitText(myClass) { // Splits text marked by 'reflective' class text into individual letters, and applies reflectiveElement class to each letter
+    const elements = document.getElementsByClassName(myClass);
+    const elementsArray = Array.from(elements); // Convert HTMLCollection to array        
+    
+    elementsArray.forEach((element, index) => {
+        const text = element.textContent;
+        const modifiedText = text.split('').map(letter => `<span class='reflectiveElement'>${letter}</span>`).join('');
+        element.innerHTML = modifiedText;
+    });
+}
+
+function mouseTracker() {
+    const mouse = document.querySelector('.mouse');
+    let scrollY = window.scrollY;
+    
+    document.addEventListener('mousemove', (e) => {
+        setTimeout(() => {
+            divWidth = mouse.offsetWidth;
+            divHeight = mouse.offsetHeight;
+            let adjustedXValue = e.pageX - (divWidth / 2);
+            let adjustedYValue = e.pageY - (divHeight / 2);
+            mouse.style.left = adjustedXValue + 'px';
+            mouse.style.top = adjustedYValue - scrollY + 'px';
+        }, 150);
+    });
+    
+    document.addEventListener('scroll', (e) => {
+        scrollY = window.scrollY;
+    });
+}
+
+
+function preHoverEffect(itemClassName) {
+    const mouse = document.querySelector('.mouse');
+    const items = document.getElementsByClassName(itemClassName);
+    const mouseWidth = mouse.offsetWidth;
+    const mouseHeight = mouse.offsetHeight;
+    const mouseRadius = Math.sqrt((mouseWidth / 2) ** 2 + (mouseHeight / 2) ** 2) * .75;
+    
+    const handleMouseMove = (e) => {
+        const mouseX = e.pageX;
+        const mouseY = e.pageY;
+        
+        Array.from(items).forEach((item, index) => {
+            const itemCenterX = item.offsetLeft + item.offsetWidth / 2;
+            const itemCenterY = item.offsetTop + item.offsetHeight / 2;
+            const distance = Math.sqrt((mouseX - itemCenterX) ** 2 + (mouseY - itemCenterY) ** 2);
+            
+            if (distance <= mouseRadius) {
+                const intensity = Math.max(190, 255 - Math.floor((distance / mouseRadius) * 255));
+                item.style.color = `rgb(${intensity}, ${intensity}, ${intensity})`;
+            }
+            else {
+                item.style.color = 'rgb(180,180,180)';
+            }
+        }
+    )
+}
+document.addEventListener('mousemove', handleMouseMove);
+};
+const faceElementDynamicSizing = () => {
+    const nameElement = document.getElementById('myName');
+    const faceElement = document.getElementById('myFace');
+
+    if (nameElement && faceElement) {
+        let nameWidth = nameElement.offsetWidth;
+        faceElement.style.width = nameWidth + 'px';
+    }
+}
+
+
+
+document.addEventListener('mousemove', mouseTracker())
+preHoverEffect('reflectiveElement');
+splitText('reflective')
+faceElementDynamicSizing();
+</script> -->
+<script src="app.js"></script>
+
+</html>
